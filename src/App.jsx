@@ -1,13 +1,14 @@
 import { useState } from 'react';
 import './App.css';
-import { DrinkButtons } from './components/DrinkButtons';
 import { DrinkChoice } from './components/DrinkChoice';
-import { tea, coffee } from './utils/data';
 import { DrinkSearch } from './components/DrinkSearch';
+
 
 export const App = () => {
 
 	const [userDrink, setUserDrink] = useState();
+
+	console.log(userDrink)
 
 	const greeting = 'Welcome to our cafe!';
 
@@ -15,14 +16,13 @@ export const App = () => {
 		<div className="app">
 			{userDrink ? (
 				<DrinkChoice drink={userDrink} />
-
 			) : (
 				<>
 					<h1>{greeting}</h1>
-					<DrinkButtons drinkOne={tea.name} drinkTwo={coffee.name} />
 					<DrinkSearch />
 				</>
 			)}
+
 		</div>
 	);
 };
