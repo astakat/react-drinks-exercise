@@ -15,24 +15,17 @@ export const App = () => {
 	return (
 		<div className="app">
 			{userDrink ? (
-				<DrinkChoice drink={userDrink} />
+				<DrinkChoice drink={userDrink} clickFn={setUserDrink} />
 			) : (
 				<>
-					<h1>{greeting}</h1>
-					<DrinkSearch />
+					<h2>{greeting}</h2>
+					<DrinkSearch clickFn={setUserDrink} />
 				</>
-			)}
+			)
+			}
 
-		</div>
+		</div >
 	);
 };
 
-
-	// return (
-	// 	<div className="app">
-	// 		{userDrink && <h1>{greeting}</h1>}
-	// 		<DrinkButtons drinkOne={tea.name} drinkTwo={coffee.name} />
-	// 		{userDrink && <DrinkChoice drink={userDrink} />}
-	// 	</div>
-	// );
 

@@ -1,10 +1,12 @@
 const tea = {
+	id: self.crypto.randomUUID(),
 	name: 'Tea',
 	imgUrl: 'https://media.wincacademy.nl/coffee.jpeg',
 	alt: `Picture of a cup of tea`,
 };
 
 const coffee = {
+	id: self.crypto.randomUUID(),
 	name: 'Coffee',
 	imgUrl: 'https://media.wincacademy.nl/tea.jpeg',
 	alt: `Picture of a cup coffee`,

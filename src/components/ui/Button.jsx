@@ -1,3 +1,7 @@
-import './Button.css';
+import './Button.css'
+// import { Button, ButtonGroup } from '@chakra-ui/react'
 
-export const Button = ({ text }) => <button className="button">{text}</button>;
+export const Button = ({ text, onClick }) =>
+    <Button className="button" onClick={onClick}>
+        {text}
+    </Button>;
