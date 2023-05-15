@@ -12,9 +12,20 @@ import {
 } from '@chakra-ui/react'
 import { useDisclosure } from '@chakra-ui/react'
 import { Button as CButton } from '@chakra-ui/react'
+import React from 'react'
 
 export const DrinkChoice = ({ drink, clickFn }) => {
 	const { isOpen, onOpen, onClose } = useDisclosure()
+
+	const [size, setSize] = React.useState('md')
+
+
+	const handleSizeClick = (newSize) => {
+		setSize(newSize)
+		onOpen()
+	}
+
+	// const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
 
 	return (
 		<>
@@ -29,12 +40,14 @@ export const DrinkChoice = ({ drink, clickFn }) => {
 				<CButton onClick={() => clickFn()} variant="ghost" colorScheme='pink'>
 					Change selection
 				</CButton>
-				<Modal isOpen={isOpen} onClose={onClose}>
+				<Modal size={['full', 'md']} isOpen={isOpen} onClose={onClose}>
 					<ModalOverlay />
 					<ModalContent>
 						<ModalHeader>Is this really what you want?</ModalHeader>
 						<ModalCloseButton />
-						<ModalBody>
+						<ModalBody
+							height={['full', 'fit-content']} display="flex" justifyContent="center" alignItmes={['center', 'flex-start']} flexDir="column"
+						>
 							<Text>
 								Please confirm drink
 							</Text>
