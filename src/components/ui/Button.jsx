@@ -1,7 +1,8 @@
 import './Button.css'
-// import { Button, ButtonGroup } from '@chakra-ui/react'
+import { Circle } from '@chakra-ui/react'
 
-export const Button = ({ text, onClick }) =>
-    <Button className="button" onClick={onClick}>
+export const Button = ({ text, onClick }) => (
+    <Circle className="button" onClick={onClick}>
         {text}
-    </Button>;
+    </Circle>);
+
